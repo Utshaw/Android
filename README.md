@@ -71,3 +71,40 @@ ImageView callImageView = (ImageView) convertView.findViewById(R.id.make_call);
         firstItem.getDrawable(0);
         firstItem.setColor(magnitudeColor); // magnitudeColor is int 
 ```
+
+## Properly showing CardView inside a ListView
+ListView code fragment
+```
+<ListView
+    android:id="@+id/list"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="10.0sp"/>
+```
+List item
+```
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardBackgroundColor="#E6E6E6"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="8dp">
+
+<LinearLayout
+    android:background="#F3EEEE"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+            .....
+            .....
+            .....
+</LinearLayout>
+</android.support.v7.widget.CardView>
+```
