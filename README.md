@@ -23,7 +23,7 @@ Usage:
 Output: <br />
 ![](img/circle-1.png)
 
-## Programmatically change colors in StateListDrawable
+## Programmatically change colors of StateListDrawable
 Ref: [Stack Overflow- How can I change colors in my StateListDrawable?](https://stackoverflow.com/questions/19864337/how-can-i-change-colors-in-my-statelistdrawable) <br />
 button_main.xml (main layout)
 ```
