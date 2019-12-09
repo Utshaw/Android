@@ -1,4 +1,29 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+## ListView nested inside ScrollView showing only one item
+Call this method after setting the adapter. 
+```
+public static void setListViewHeightBasedOnChildren(ListView listView) {
+        BaseAdapter listAdapter = (BaseAdapter) listView.getAdapter();
+        if (listAdapter == null) {
+            // pre-condition
+            return;
+        }
+
+        int totalHeight = 0;
+        Log.d("UIU-965", listAdapter.getCount() + "");
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
+        listView.requestLayout();
+    }
+```
+
 ## ALertDialog with curved edge
 ![](img/feedback.png)
 XML file:
