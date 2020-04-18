@@ -1,4 +1,5 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+
 ## ListView nested inside ScrollView showing only one item
 Call this method with the listview as parameter after setting the adapter. 
 ```
