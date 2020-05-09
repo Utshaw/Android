@@ -1,6 +1,25 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
+## RelativeLayout inside ScrollView not taking full height
+Ref: https://stackoverflow.com/questions/10962602/cant-resize-a-relativelayout-inside-a-scrollview-to-fill-the-whole-screen
+<br />
+`android:fillViewport="true"`
+```
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+         android:fillViewport="true" >
+
+```
 ## TextView ending with ellipsize
+Three lines are important:
+```
+android:maxLines="1"
+android:ellipsize="end"
+android:maxEms="15"
+```
+Example:
 ```
 <TextView
     android:maxLines="1"
