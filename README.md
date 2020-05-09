@@ -1,5 +1,20 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
+## TextView ending with ellipsize
+```
+<TextView
+    android:maxLines="1"
+    android:ellipsize="end"
+    android:maxEms="15"
+    android:id="@+id/problemDesc"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="Problem desc"
+    android:textColor="#000000"
+    android:textSize="14sp"
+    android:typeface="sans" />
+```
+
 ## ListView nested inside ScrollView showing only one item
 Call this method with the listview as parameter after setting the adapter. 
 ```
