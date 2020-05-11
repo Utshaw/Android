@@ -1,5 +1,66 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
+## Comment popup like Facebook
+Ref: https://stackoverflow.com/questions/26795263/how-to-build-a-facebook-comment-like-popup-in-android
+
+## ListView scrolls to bottom
+Ref: https://stackoverflow.com/questions/3606530/listview-scroll-to-the-end-of-the-list-after-updating-the-list
+<br />
+**I still don't know how to make it work** <br />
+Used this (kind of works, yeah)
+```
+etComment.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+    @Override
+    public void onFocusChange(View view, boolean b) {
+        if(b){
+
+            listView.setSelection(commentAdapter.getCount() - 1);
+            listView.setTranscriptMode(ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);
+            listView.setStackFromBottom(true);
+        }
+    }
+});
+```
+```
+android:transcriptMode="alwaysScroll"
+android:stackFromBottom="true"
+```
+
+## ListView inside ScrollView showing one item only
+Ref: [StackOverflow](https://stackoverflow.com/questions/18411494/android-listview-show-only-one-item#answer-45629226)
+```
+public class NonScrollListView extends ListView {
+
+public NonScrollListView(Context context) {
+    super(context);
+}
+public NonScrollListView(Context context, AttributeSet attrs) {
+    super(context, attrs);
+}
+public NonScrollListView(Context context, AttributeSet attrs, int defStyle) {
+    super(context, attrs, defStyle);
+}
+@Override
+public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int heightMeasureSpec_custom = MeasureSpec.makeMeasureSpec(
+                Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec_custom);
+        ViewGroup.LayoutParams params = getLayoutParams();
+        params.height = getMeasuredHeight();    
+}
+
+}
+```
+```
+<xx.xx.NonScrollListView
+    android:id="@+id/lv_nonscroll_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+</xx.xx.NonScrollListView>
+```
+
+
+
 ## RelativeLayout inside ScrollView not taking full height
 Ref: https://stackoverflow.com/questions/10962602/cant-resize-a-relativelayout-inside-a-scrollview-to-fill-the-whole-screen
 <br />
