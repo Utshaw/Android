@@ -1,5 +1,18 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
+## Button click ripple effect on TextView/ImageView
+Ref: https://stackoverflow.com/questions/33477025/how-to-set-a-ripple-effect-on-textview-or-imageview-on-android
+<br />**For rectangle ripple effect**
+```
+android:background="?attr/selectableItemBackground"
+android:clickable="true"
+```
+<br />**For circular ripple effect**
+```
+android:background="?attr/selectableItemBackgroundBorderless"
+android:clickable="true"
+```
+
 ## Comment popup like Facebook
 Ref: https://stackoverflow.com/questions/26795263/how-to-build-a-facebook-comment-like-popup-in-android
 
