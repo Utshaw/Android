@@ -7,7 +7,7 @@ Ref: https://stackoverflow.com/questions/33477025/how-to-set-a-ripple-effect-on-
 android:background="?attr/selectableItemBackground"
 android:clickable="true"
 ```
-<br />**For circular ripple effect**
+<br />**For circular ripple effect(did't work properly in my usage)**
 ```
 android:background="?attr/selectableItemBackgroundBorderless"
 android:clickable="true"
