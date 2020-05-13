@@ -3,7 +3,7 @@
 ## ListView onItemClickListener not working
 Ref: https://stackoverflow.com/questions/5551042/onitemclicklistener-not-working-in-listview
 <br />
-Add this on the top level element
+Add this on the child item element's container view
 ```
 android:focusable="false"
 android:descendantFocusability="blocksDescendants"
