@@ -1,5 +1,35 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
+## ListView onItemClickListener not working
+Ref: https://stackoverflow.com/questions/5551042/onitemclicklistener-not-working-in-listview
+<br />
+Add this on the top level element
+```
+android:focusable="false"
+android:descendantFocusability="blocksDescendants"
+```
+
+## Hide keyboard programmatically
+Ref: https://stackoverflow.com/questions/1109022/close-hide-android-soft-keyboard
+```
+public void hideKeyboard() {
+try {
+    InputMethodManager inputmanager = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+    if (inputmanager != null) {
+        inputmanager.hideSoftInputFromWindow(context.getCurrentFocus().getWindowToken(), 0);
+    }
+} catch (Exception var2) {
+}
+
+}
+```
+
+## OnClickListener not working
+Reasons:
+- The view you are trying to click may have a "transparent" view above it
+- This type of scenario will arise when ListView is defined after Empty View. You need to define listview first then empty view for letting the empty view to handle the click event.
+
+
 ## Button click ripple effect on TextView/ImageView
 Ref: https://stackoverflow.com/questions/33477025/how-to-set-a-ripple-effect-on-textview-or-imageview-on-android
 <br />**For rectangle ripple effect**
