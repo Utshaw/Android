@@ -1,5 +1,77 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
+## Image click to preview in bigger size
+Ref: https://stackoverflow.com/questions/12089485/how-to-show-a-fullsize-image-after-clicking-the-thumbnail-image-in-android#answer-12089733
+<br /> **Better approach is mentioned after this code**
+<br /> My code:
+<br /> Method inside the adapter class:
+```
+private void showImagePreview(String imageLink) {
+
+    final Dialog nagDialog = new Dialog(context,android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+    nagDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+    nagDialog.setCancelable(false);
+    nagDialog.setContentView(R.layout.preview_image);
+    Button btnClose = (Button)nagDialog.findViewById(R.id.btnIvClose);
+    final ImageView ivPreview = (ImageView)nagDialog.findViewById(R.id.iv_preview_image);
+
+
+    Glide.with(context)
+            .load(imageLink)
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(ivPreview);
+
+    btnClose.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View arg0) {
+
+            nagDialog.dismiss();
+        }
+    });
+    nagDialog.show();
+}
+
+```
+<br /> preview_image.xml:
+```
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/iv_preview_image" />
+
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_close_white_24dp"
+    android:id="@+id/btnIvClose"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true" />
+
+</RelativeLayout>
+```
+<br /> Inside getView of adapter:
+```
+ivImageAttachment.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+
+        showImagePreview(comment.getCommmentAttachmentLink());
+    }
+});
+```
+**Important: better approach is using stfalcon library** <br />
+Link: https://github.com/stfalcon-studio/StfalconImageViewer <br />
+- [ImageView with fullscreen zoom using stfalcon](https://stackoverflow.com/questions/47510992/imageview-with-fullscreen-zoom#answer-53849943)
+- [Usage of StfalconImageViewer in Java only Project](https://github.com/stfalcon-studio/StfalconImageViewer/issues/4)
+
+
 ## Glide Image loading from low res to full res transition
 Ref: https://medium.com/@elye.project/glide-image-loader-the-basic-798db220bb44
 
