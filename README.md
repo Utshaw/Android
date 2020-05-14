@@ -1,5 +1,9 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
+## Glide Image loading from low res to full res transition
+Ref: https://medium.com/@elye.project/glide-image-loader-the-basic-798db220bb44
+
+
 ## Fit multiple image size into list item view (ImageView)
 Ref: https://stackoverflow.com/questions/8232608/fit-image-into-imageview-keep-aspect-ratio-and-then-resize-imageview-to-image-d#answer-20488327
 <br /> List item view:
