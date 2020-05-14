@@ -15,7 +15,7 @@ Ref: https://stackoverflow.com/questions/8232608/fit-image-into-imageview-keep-a
     android:maxWidth="250dp"
     android:maxHeight="250dp"/>
 ```
-Load using Picasso:
+Load using Picasso from adapter:
 ```
 Picasso.with(context).load(comment.getCommmentAttachmentLink()).into(ivImageAttachment);
 ```
