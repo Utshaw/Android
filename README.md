@@ -1,5 +1,25 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
+## Fit multiple image size into list item view (ImageView)
+Ref: https://stackoverflow.com/questions/8232608/fit-image-into-imageview-keep-aspect-ratio-and-then-resize-imageview-to-image-d#answer-20488327
+<br /> List item view:
+```
+<ImageView
+    android:scaleType="centerInside"
+    android:adjustViewBounds="true"
+    android:id="@+id/ivImageAttachment"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:maxWidth="250dp"
+    android:maxHeight="250dp"/>
+```
+Load using Picasso:
+```
+Picasso.with(context).load(comment.getCommmentAttachmentLink()).into(ivImageAttachment);
+```
+
 ## ListView onItemClickListener not working
 Ref: https://stackoverflow.com/questions/5551042/onitemclicklistener-not-working-in-listview
 <br />
