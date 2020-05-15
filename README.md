@@ -1,4 +1,41 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+## Add header in ListView
+Ref: https://android--code.blogspot.com/2015/08/android-listview-header.html
+```
+// Get reference of widgets from XML layout
+final ListView lv = (ListView) findViewById(R.id.lv);
+
+// Initializing a new String Array
+String[] fruits = new String[] {
+        "Abiu",
+        "Batuan",
+        "Black Mulberry",
+        "Cape Gooseberry",
+        "Desert banana",
+        "Eastern May Hawthorn",
+        "Fibrous Satinash",
+        "Gooseberry",
+        "Hairless rambutan",
+        "Illawarra Plum",
+        "Jelly Palm"
+};
+
+// Create a List from String Array elements
+final List<String> fruits_list = new ArrayList<String>(Arrays.asList(fruits));
+
+// Create an ArrayAdapter from List
+final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
+        (this, android.R.layout.simple_list_item_1, fruits_list);
+
+// Add a header to the ListView
+LayoutInflater inflater = getLayoutInflater();
+ViewGroup header = (ViewGroup)inflater.inflate(R.layout.listview_header,lv,false);
+lv.addHeaderView(header);
+
+// DataBind ListView with items from ArrayAdapter
+lv.setAdapter(arrayAdapter);
+```
+
 
 ## Image click to preview in bigger size
 Ref: https://stackoverflow.com/questions/12089485/how-to-show-a-fullsize-image-after-clicking-the-thumbnail-image-in-android#answer-12089733
