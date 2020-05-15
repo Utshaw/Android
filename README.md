@@ -1,4 +1,12 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+
+## Reverse ListView (like in messenger)
+Ref: https://stackoverflow.com/questions/16318034/android-reverse-listview-as-message-display
+```
+android:stackFromBottom="true"
+android:transcriptMode="normal"
+```
+
 ## Add header in ListView
 Ref: https://android--code.blogspot.com/2015/08/android-listview-header.html
 ```
