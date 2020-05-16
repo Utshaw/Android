@@ -1,4 +1,6 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+## Adding svg file(s) in Android Studio
+Ref: https://stackoverflow.com/questions/30923205/easiest-way-to-use-svg-in-android
 
 ## Reverse ListView (like in messenger)
 Ref: https://stackoverflow.com/questions/16318034/android-reverse-listview-as-message-display
