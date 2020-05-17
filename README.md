@@ -538,3 +538,6 @@ List item
 
 ## Volley
 Latest release: https://github.com/google/volley/releases <br />
+
+## Awesome Android Resource
+- [awesome-android-ui](https://github.com/wasabeef/awesome-android-ui)
