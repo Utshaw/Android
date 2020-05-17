@@ -1,4 +1,13 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+## Bitmap from filepath
+Ref: https://stackoverflow.com/questions/16804404/create-a-bitmap-drawable-from-file-path
+<br /> Code:
+```
+String filepath = "/storage/emulated/0/DCIM/Screenshots/Screenshot_20200516-164037_Some_App.jpg";
+Bitmap bitmap = BitmapFactory.decodeFile(filePath);
+```
+
+
 ## Adding svg file(s) in Android Studio
 Ref: https://stackoverflow.com/questions/30923205/easiest-way-to-use-svg-in-android
 
@@ -189,27 +198,38 @@ android:clickable="true"
 ## Comment popup like Facebook
 Ref: https://stackoverflow.com/questions/26795263/how-to-build-a-facebook-comment-like-popup-in-android
 
-## ListView scrolls to bottom
-Ref: https://stackoverflow.com/questions/3606530/listview-scroll-to-the-end-of-the-list-after-updating-the-list
+## ListView scrolls to bottom when keyboard opens
+Ref (not working for me though): https://stackoverflow.com/questions/3606530/listview-scroll-to-the-end-of-the-list-after-updating-the-list
 <br />
-**I still don't know how to make it work** <br />
-Used this (kind of works, yeah)
-```
-etComment.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-    @Override
-    public void onFocusChange(View view, boolean b) {
-        if(b){
+Used this (works)
 
-            listView.setSelection(commentAdapter.getCount() - 1);
-            listView.setTranscriptMode(ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);
-            listView.setStackFromBottom(true);
-        }
-    }
-});
-```
+For ListView:
 ```
 android:transcriptMode="alwaysScroll"
-android:stackFromBottom="true"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_above="@id/comment_section"
+```
+For comment section:
+```
+<LinearLayout
+
+    android:id="@+id/comment_section"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/llCommentPreview"
+        layout="@layout/comment_image_preview" />
+
+    <include
+        android:id="@+id/llCommentSendLayout"
+        layout="@layout/comment_send_box" />
+
+</LinearLayout>
 ```
 
 ## ListView inside ScrollView showing one item only
