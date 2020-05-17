@@ -1,4 +1,8 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+## Overlay loading/progress dialog
+![](https://camo.githubusercontent.com/d8108413298d70047f52cff9ac05603a5fd51988/687474703a2f2f332e62702e626c6f6773706f742e636f6d2f2d6c3155765657694d5341672f564c61355a6657346444492f41414141414141414e54632f7273576f755f71623042632f733332302f593648615453772e676966) <br />
+Link: https://github.com/dybarsky/spots-dialog
+
 ## Bitmap from filepath
 Ref: https://stackoverflow.com/questions/16804404/create-a-bitmap-drawable-from-file-path
 <br /> Code:
