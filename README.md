@@ -1,4 +1,32 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+## ListView messenger/comment box effect
+ListView will scroll to bottom when message entered 
+```
+queryReplyInfoListView.setSelection(queryReplyInfoAdapter.getCount() - 1);
+```
+ListView:
+```
+<ListView
+    android:transcriptMode="normal"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="10.0sp"
+    android:id="@+id/list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@id/comment_section"
+    android:layout_marginBottom="0dp"/>
+```
+
+
+## File size in Androird
+Ref: https://stackoverflow.com/questions/10202805/how-do-i-get-file-size-of-temp-file-in-android
+```
+File file = new File(selectedPath);
+int file_size = Integer.parseInt(String.valueOf(file.length()/1024));
+```
+file.length() returns the length of the file in bytes.
+Dividing by 1024 converts the size from bytes to kilobytes.
+
 ## Overlay loading/progress dialog
 ![](https://camo.githubusercontent.com/d8108413298d70047f52cff9ac05603a5fd51988/687474703a2f2f332e62702e626c6f6773706f742e636f6d2f2d6c3155765657694d5341672f564c61355a6657346444492f41414141414141414e54632f7273576f755f71623042632f733332302f593648615453772e676966) <br />
 Link: https://github.com/dybarsky/spots-dialog
