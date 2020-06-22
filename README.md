@@ -14,7 +14,7 @@ Manifest.xml
 ```
 EducationInfoUpdate.java
 ```
-getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+getSupportActionBar().setDisplayHomeAsUpEnabled(true); // inside onCreate
 
 ```
 ## ListView messenger/comment box effect
