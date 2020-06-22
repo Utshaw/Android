@@ -1,4 +1,22 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+## Back button on ActionBar
+Manifest.xml
+```
+<activity
+    android:theme="@style/SettingsTheme"
+    android:name="com.example.utshaw.EducationInfoUpdate"
+    android:screenOrientation="portrait" >
+    <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value="com.example.utshaw.MemberDetailNew" />
+
+</activity>
+```
+EducationInfoUpdate.java
+```
+getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+```
 ## ListView messenger/comment box effect
 ListView will scroll to bottom when message entered 
 ```
