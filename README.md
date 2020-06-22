@@ -1,4 +1,6 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+## No cached version… available for offline mode.
+Solution: [StackOverflow](https://stackoverflow.com/questions/22607661/no-cached-version-available-for-offline-mode#answer-60697078)
 ## Back button on ActionBar
 Manifest.xml
 ```
