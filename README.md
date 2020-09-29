@@ -1,4 +1,36 @@
 # Android ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+## CardView show shadow
+```
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardBackgroundColor="#F2F2F2"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="8dp">
+
+        <TextView
+            android:textSize="45sp"
+            android:text="TEXT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+```
+
 ## No cached version… available for offline mode.
 Solution: [StackOverflow](https://stackoverflow.com/questions/22607661/no-cached-version-available-for-offline-mode#answer-60697078)
 ## Back button on ActionBar
